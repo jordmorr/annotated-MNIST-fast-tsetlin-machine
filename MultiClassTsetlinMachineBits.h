@@ -1,4 +1,4 @@
-MIT License
+/*
 
 Copyright (c) 2019 Ole-Christoffer Granmo
 
@@ -19,3 +19,25 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+This code implements a multiclass version of the Tsetlin Machine from paper arXiv:1804.01508
+https://arxiv.org/abs/1804.01508
+
+*/
+
+#include "TsetlinMachineBits.h"
+#include "MultiClassTsetlinMachineConfig.h"
+
+struct MultiClassTsetlinMachine { 
+	struct TsetlinMachine *tsetlin_machines[CLASSES];
+};
+
+struct MultiClassTsetlinMachine *CreateMultiClassTsetlinMachine();
+
+void mc_tm_initialize(struct MultiClassTsetlinMachine *mc_tm);
+
+void mc_tm_initialize_random_streams(struct MultiClassTsetlinMachine *mc_tm);
+
+float mc_tm_evaluate(struct MultiClassTsetlinMachine *mc_tm, unsigned int X[][LA_CHUNKS], int y[], int number_of_examples);
+
+void mc_tm_fit(struct MultiClassTsetlinMachine *mc_tm, unsigned int X[][LA_CHUNKS], int y[], int number_of_examples, int epochs);
