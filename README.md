@@ -2,7 +2,11 @@
 An implementation of the Tsetlin Machine (https://arxiv.org/abs/1804.01508) using bitwise operations for increased learning- and classification speed.
 
 ## Annotations
-This version contains additional annotations from Jordan Morris that explains the functionality of the bitwise logic and links it back to the terminology in the seminal paper.
+This version contains additional annotations from Jordan Morris that explain the functionality of the bitwise logic and link it back to the terminology in the seminal paper.
+
+Ole's original repository may be found here: (https://github.com/cair/fast-tsetlin-machine-with-mnist-demo)
+
+## Comparisons
 
 On the MNIST dataset, the bit manipulation leads to approx.
 * 10 times smaller memory footprint,
